@@ -7,9 +7,9 @@ public class Verificacao {
           String palavraFormatada = word.replace(" $",","); //  lw    ,t0, 0($t7)
           palavraFormatada = palavraFormatada.replace(" ",""); // lw,t0,0($t7)
 
-          String type = teste[0]; // lw
+          String type = teste[0];
           if (instrucao.getl(type) != null) {
-               if (word.contains("(")) { // lw     $t0, 0($t7)
+               if (word.contains("(")) {
                     palavraFormatada = palavraFormatada.replace("$",""); // lw,t0,0(t7)
                     System.out.println(palavraFormatada);
                     palavraFormatada = palavraFormatada.replace("(",",").replace(")","");// lw,t0,0,t7
@@ -27,31 +27,14 @@ public class Verificacao {
                     System.out.println(retorno);
                }
 
-          } else if (type.equals("j")) {
-               String number = Integer.toBinaryString(Integer.parseInt(teste[1]));
-               if (number.length() < 26) {
-                    int diferen = 26 - number.length();
-                    for (int i = 0; i < diferen; i++) {
-                         number = "0" + number;
-                    }
-               }
-               String binario = "000010" + number;
-               System.out.println(binario.length());
-          } else if (type.equals("jal")) {
-               String number = Integer.toBinaryString(Integer.parseInt(teste[1]));
-               if (number.length() < 26) {
-                    int diferen = 26 - number.length();
-                    for (int i = 0; i < diferen; i++) {
-                         number = "0" + number;
-                    }
-               }
-               String binario = "000011" + number;
-
-          } else { // srl    $t0, $t0, 1
+          }else if(instrucao.getr(type) != null) { // srl    $t0, $t0, 1
                palavraFormatada = palavraFormatada.replace(",,",",");
                System.out.println(palavraFormatada);
                String[] certa = palavraFormatada.split(",");
                System.out.println(R.returnbinario(type, certa));
+          }else{
+               String[] wordCerta = word.split(" ");
+               J.returnBinario(instrucao.getr(wordCerta[0]),wordCerta);
           }
      }
 }

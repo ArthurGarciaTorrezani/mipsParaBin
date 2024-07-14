@@ -2,8 +2,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Instrucao {
-     private Map<String, String> l = new HashMap<String, String>();
-     private Map<String, String> r = new HashMap<String, String>(); // rs rt rd
+     private final Map<String, String> l = new HashMap<String, String>();
+     private final Map<String, String> j = new HashMap<String, String>();
+     private final Map<String, String> r = new HashMap<String, String>(); // rs rt rd
 
      public Instrucao() {
           l.put("lb", "100000");
@@ -72,13 +73,17 @@ public class Instrucao {
           r.put("jr", "001000");
           r.put("jarl", "001001");
 
+          j.put("j","000010");
+          j.put("jal","000011");
      }
 
      public String getl(String key) {
           return l.get(key);
      }
-
      public String getr(String key) {
           return r.get(key);
+     }
+     public String getj(String key) {
+          return j.get(key);
      }
 }
