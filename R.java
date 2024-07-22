@@ -8,7 +8,7 @@ public class R { // add
           // rs rt rd
           Instrucao instrucaotext = new Instrucao();
           String binarInstru = instrucaotext.getr(instrucao); // vai virar o "numero"
-          String[] naopadroes = { "sll", "srl", "sra", "bgezal", "bgtz", "lui" };
+          String[] naopadroes = { "sll", "srl", "sra", "mfhi", "mthi","mtlo", "mflo","mult","multu","div","divu","jr","jarl" };
 
           List<String> lista = Arrays.asList(naopadroes);
 
