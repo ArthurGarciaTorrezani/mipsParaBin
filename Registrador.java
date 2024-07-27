@@ -21,7 +21,7 @@ public class Registrador {
           registradores.put("t5", "01101");
           registradores.put("t6", "01110");
           registradores.put("t7", "01111");
-          
+
           registradores.put("s0", "10000");
           registradores.put("s1", "10001");
           registradores.put("s2", "10010");
@@ -46,5 +46,5 @@ public class Registrador {
      public String getMip(String key) {
           return registradores.get(key);
      }
-     
+
 }

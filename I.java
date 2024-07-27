@@ -4,8 +4,8 @@ import java.util.List;
 
 public class I {
 
-     public static String returnbinario(String instrucao, String[] word) {
-          Instrucao instrucaotext = new Instrucao(); // lw pra binario
+     public static String returnbinario(String instrucao, String[] word) { // $t0, $s7 0
+          Instrucao instrucaotext = new Instrucao(); // lw pra binario $t0, $t0, 1
 
           String binario = instrucaotext.getl(instrucao); // "7"
 
@@ -15,12 +15,12 @@ public class I {
 
           String[] traduzida = new String[3];
 
-          if (word.length == 3) {
-               traduzida = Tradutor.returnTraducao(word[1], word[2], null); //mult $s1, $s2
-          }else if(word.length == 2){
-               traduzida = Tradutor.returnTraducao(word[1], null, null); //mfhi $s1
-          }else {
-               traduzida = Tradutor.returnTraducao(word[1], word[2], word[3]); //lw $t0, $t1 1200
+          if (word.length == 3) { // t0 t0 1
+               traduzida = Tradutor.returnTraducao(word[1], word[2], null); // mult $s1, $s2
+          } else if (word.length == 2) {
+               traduzida = Tradutor.returnTraducao(word[1], null, null); // mfhi $s1
+          } else {
+               traduzida = Tradutor.returnTraducao(word[1], word[2], word[3]); // 00000 11111 01010
           }
 
           if (!lista.contains(instrucao)) {
@@ -37,27 +37,27 @@ public class I {
 
           if (instrucao.equals("bgtz") || instrucao.equals("blez") || instrucao.equals("bltz")) {
                traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 16);
-               binario += traduzida[0]  + "00000"  + traduzida[1];
+               binario += traduzida[0] + "00000" + traduzida[1];
                return binario;
           }
 
           if (instrucao.equals("bgez")) {
                traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 16);
-               binario += traduzida[0]  + "00001"  + traduzida[1];
+               binario += traduzida[0] + "00001" + traduzida[1];
                return binario;
           }
 
           if (instrucao.equals("bltzal")) {
                traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 16);
-               binario += traduzida[0]  + Tradutor.arrumarbinario(Integer.toBinaryString(16), 6)
-                       + traduzida[1];
+               binario += traduzida[0] + Tradutor.arrumarbinario(Integer.toBinaryString(16), 6)
+                         + traduzida[1];
                return binario;
           }
 
           if (instrucao.equals("bgezal")) {
                traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 16);
-               binario += traduzida[2] +  Tradutor.arrumarbinario(Integer.toBinaryString(17), 6)
-                       + traduzida[1];
+               binario += traduzida[2] + Tradutor.arrumarbinario(Integer.toBinaryString(17), 6)
+                         + traduzida[1];
                return binario;
           }
 

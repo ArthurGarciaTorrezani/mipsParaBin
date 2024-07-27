@@ -73,16 +73,18 @@ public class Instrucao {
           r.put("jr", "001000");
           r.put("jarl", "001001");
 
-          j.put("j","000010");
-          j.put("jal","000011");
+          j.put("j", "000010");
+          j.put("jal", "000011");
      }
 
      public String getl(String key) {
           return l.get(key);
      }
+
      public String getr(String key) {
           return r.get(key);
      }
+
      public String getj(String key) {
           return j.get(key);
      }
