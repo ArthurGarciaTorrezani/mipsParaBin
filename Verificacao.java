@@ -20,7 +20,7 @@ public class Verificacao {
                return word + "\n" + retorno + "\n";
           } else { // verifica se ta no J
                String[] wordCerta = word.split(" ");
-               String retorno = J.returnBinario(instrucao.getr(wordCerta[0]), wordCerta);
+               String retorno = J.returnBinario(instrucao.getj(wordCerta[0]), wordCerta);
                return word + "\n" + retorno + "\n";
           }
      }
