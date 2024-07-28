@@ -19,8 +19,8 @@ public class Verificacao {
                String retorno = R.returnbinario(type, formatada);
                return word + "\n" + retorno + "\n";
           } else { // verifica se ta no J
-               String[] wordCerta = word.split(" ");
-               String retorno = J.returnBinario(instrucao.getj(wordCerta[0]), wordCerta);
+               String[] wordCerta = word.split(" "); 
+               String retorno = J.returnBinario(instrucao.getj(wordCerta[0]), wordCerta[1]);
                return word + "\n" + retorno + "\n";
           }
      }
