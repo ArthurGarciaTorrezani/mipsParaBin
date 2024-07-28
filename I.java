@@ -9,7 +9,7 @@ public class I {
 
           String binario = instrucaotext.getl(instrucao); // "7"
 
-          String[] naopadroes = { "bltz", "bgez", "bltzal", "bgezal", "bgtz", "lui" };
+          String[] naopadroes = { "bltz", "bgez", "bltzal", "bgezal", "bgtz", "lui","blez" };
 
           List<String> lista = Arrays.asList(naopadroes);
 
@@ -37,8 +37,9 @@ public class I {
                binario += "00000" + traduzida[0] + traduzida[2];
                return binario;
           }
-
+          
           if (instrucao.equals("bgtz") || instrucao.equals("blez") || instrucao.equals("bltz")) {
+               System.out.println(traduzida[1]);
                traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 16);
                binario += traduzida[0] + "00000" + traduzida[1];
                return binario;
@@ -54,7 +55,7 @@ public class I {
           if (instrucao.equals("bltzal")) {
                traduzida[0] = Tradutor.arrumarbinario(traduzida[0], 5);
                traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 16);
-               binario += traduzida[0] + Tradutor.arrumarbinario(Integer.toBinaryString(16), 6)
+               binario += traduzida[0] + Tradutor.arrumarbinario(Integer.toBinaryString(16), 5)
                          + traduzida[1];
                return binario;
           }
@@ -62,7 +63,7 @@ public class I {
           if (instrucao.equals("bgezal")) {
                traduzida[2] = Tradutor.arrumarbinario(traduzida[2], 5);
                traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 16);
-               binario += traduzida[2] + Tradutor.arrumarbinario(Integer.toBinaryString(17), 6)
+               binario += traduzida[2] + Tradutor.arrumarbinario(Integer.toBinaryString(17), 5)
                          + traduzida[1];
                return binario;
           }
