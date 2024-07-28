@@ -26,27 +26,21 @@ public class Tradutor {
           } else if (registrador.getMip(r3) != null) {
                traducao[2] = registrador.getMip(r3);
           } else {
-               traducao[2] = Integer.toBinaryString(Integer.parseInt(r3)); // 
+               traducao[2] = Integer.toBinaryString(Integer.parseInt(r3)); 
           }
-
           return traducao;
      }
 
-     public static String arrumarbinario(String binario, int tamanho) {
- //addi   $t2, $zero, -1
-
+     public static String arrumarbinario(String binario, int tamanho) { 
           if (binario.length() < tamanho) {
                int diferenca = tamanho - binario.length();
                for (int i = 0; i < diferenca; i++) {
                     binario = "0" + binario;
                }
           } else if (binario.length() > tamanho) { 
-               String last16 = binario.substring(binario.length() - tamanho);
-               binario = last16;
+               String last = binario.substring(binario.length() - tamanho);
+               binario = last;
           }
-
           return binario;
      }
 }
-
-
