@@ -19,7 +19,7 @@ public class I {
           } else if (word.length == 2) {
                traduzida = Tradutor.returnTraducao(word[1], null, null); // mfhi $s1
           } else {
-               traduzida = Tradutor.returnTraducao(word[1], word[2], word[3]); // 00000 11111 01010
+               traduzida = Tradutor.returnTraducao(word[1], word[2], word[3]); // 
           }
 
           if (!lista.contains(instrucao)) {
