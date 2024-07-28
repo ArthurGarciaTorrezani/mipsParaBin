@@ -26,7 +26,7 @@ public class Tradutor {
           } else if (registrador.getMip(r3) != null) {
                traducao[2] = registrador.getMip(r3);
           } else {
-               traducao[2] = Integer.toBinaryString(Integer.parseInt(r3)); // v
+               traducao[2] = Integer.toBinaryString(Integer.parseInt(r3)); // 
           }
 
           return traducao;
