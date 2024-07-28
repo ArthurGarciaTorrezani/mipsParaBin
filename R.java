@@ -26,52 +26,74 @@ public class R { // add
           }
 
           if (!lista.contains(instrucao)) {
+               traduzida[0] = Tradutor.arrumarbinario(traduzida[0], 5);
+               traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 5);
+               traduzida[2] = Tradutor.arrumarbinario(traduzida[2], 5);
                binario = "000000" + traduzida[1] + traduzida[2] + traduzida[0] + "00000"
                          + binarInstru;
                return binario;
           }
 
           if (instrucao.equals("sll")) {
+               traduzida[0] = Tradutor.arrumarbinario(traduzida[0], 5);
+               traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 5);
+               traduzida[2] = Tradutor.arrumarbinario(traduzida[2], 5);
                binario = "000000" + "00000" + traduzida[1] + traduzida[0] + traduzida[2] + "000000";
                return binario;
           }
 
           if (instrucao.equals("srl") || instrucao.equals("sra")) {
+               traduzida[0] = Tradutor.arrumarbinario(traduzida[0], 5);
+               traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 5);
+               traduzida[2] = Tradutor.arrumarbinario(traduzida[2], 5);
                binario = "000000" + "00000" + traduzida[1] + traduzida[0] + traduzida[2]
                          + binarInstru;
                return binario;
           }
 
           if (instrucao.equals("mfhi")) {
+               traduzida[0] = Tradutor.arrumarbinario(traduzida[0], 5);
+               traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 5);
+               traduzida[2] = Tradutor.arrumarbinario(traduzida[2], 5);
                binario = "000000" + "00000" + "00000" + traduzida[0] + "00000" + binarInstru;
                return binario;
           }
 
           if (instrucao.equals("mthi") || instrucao.equals("mtlo")) {
+               traduzida[0] = Tradutor.arrumarbinario(traduzida[0], 5);
+               traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 5);
+               traduzida[2] = Tradutor.arrumarbinario(traduzida[2], 5);
                binario = "000000" + traduzida[0] + "00000" + "00000" + "00000" + binarInstru;
                return binario;
           }
 
           if (instrucao.equals("mflo")) {
+               traduzida[0] = Tradutor.arrumarbinario(traduzida[0], 5);
+               traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 5);
+               traduzida[2] = Tradutor.arrumarbinario(traduzida[2], 5);
                binario = "000000" + "00000" + "00000" + traduzida[0] + "00000" + binarInstru;
                return binario;
           }
 
           if (instrucao.equals("mult") || instrucao.equals("multu") || instrucao.equals("div")
                     || instrucao.equals("divu")) {
+               traduzida[0] = Tradutor.arrumarbinario(traduzida[0], 5);
+               traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 5);
                binario = "000000" + traduzida[1] + traduzida[0] + "00000" + "00000"
                          + binarInstru;
                return binario;
           }
 
           if (instrucao.equals("jr")) {
+               traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 5);
                binario = "000000" + traduzida[1] + "00000" + "00000" + "00000"
                          + binarInstru;
                return binario;
           }
 
           if (instrucao.equals("jarl")) {
-               binario = "000000" + traduzida[1] + "00000" + traduzida[1] + "00000"
+               traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 5);
+               binario = "000000" + traduzida[1] + "00000" + traduzida[0] + "00000"
                          + binarInstru;
                return binario;
           }

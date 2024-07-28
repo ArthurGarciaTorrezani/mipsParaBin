@@ -24,12 +24,15 @@ public class I {
           }
 
           if (!lista.contains(instrucao)) {
+               traduzida[0] = Tradutor.arrumarbinario(traduzida[0], 5);
+               traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 5);
                traduzida[2] = Tradutor.arrumarbinario(traduzida[2], 16);
                binario += traduzida[1] + traduzida[0] + traduzida[2];
                return binario;
           }
 
           if (instrucao.equals("lui")) {
+               traduzida[0] = Tradutor.arrumarbinario(traduzida[0], 5);
                traduzida[2] = Tradutor.arrumarbinario(traduzida[1], 16);
                binario += "00000" + traduzida[0] + traduzida[2];
                return binario;
@@ -42,12 +45,14 @@ public class I {
           }
 
           if (instrucao.equals("bgez")) {
+               traduzida[0] = Tradutor.arrumarbinario(traduzida[0], 5);
                traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 16);
                binario += traduzida[0] + "00001" + traduzida[1];
                return binario;
           }
 
           if (instrucao.equals("bltzal")) {
+               traduzida[0] = Tradutor.arrumarbinario(traduzida[0], 5);
                traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 16);
                binario += traduzida[0] + Tradutor.arrumarbinario(Integer.toBinaryString(16), 6)
                          + traduzida[1];
@@ -55,6 +60,7 @@ public class I {
           }
 
           if (instrucao.equals("bgezal")) {
+               traduzida[2] = Tradutor.arrumarbinario(traduzida[2], 5);
                traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 16);
                binario += traduzida[2] + Tradutor.arrumarbinario(Integer.toBinaryString(17), 6)
                          + traduzida[1];

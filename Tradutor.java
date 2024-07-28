@@ -18,7 +18,6 @@ public class Tradutor {
           } else if (registrador.getMip(r2) != null) { // v
                traducao[1] = registrador.getMip(r2);
           } else {
-               System.out.println(r2);
                traducao[1] = Integer.toBinaryString(Integer.parseInt(r2));
           }
 
@@ -30,24 +29,24 @@ public class Tradutor {
                traducao[2] = Integer.toBinaryString(Integer.parseInt(r3)); // v
           }
 
-          traducao[0] = arrumarbinario(traducao[0], 5);
-          traducao[1] = arrumarbinario(traducao[1], 5);
-          traducao[2] = arrumarbinario(traducao[2], 5);
-
           return traducao;
      }
 
      public static String arrumarbinario(String binario, int tamanho) {
+ //addi   $t2, $zero, -1
+
           if (binario.length() < tamanho) {
                int diferenca = tamanho - binario.length();
                for (int i = 0; i < diferenca; i++) {
                     binario = "0" + binario;
                }
-          } else if (binario.length() > tamanho) {
-               String last16 = binario.substring(binario.length() - 16);
+          } else if (binario.length() > tamanho) { 
+               String last16 = binario.substring(binario.length() - tamanho);
                binario = last16;
           }
 
           return binario;
      }
 }
+
+

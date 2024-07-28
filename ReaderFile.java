@@ -22,7 +22,6 @@ public class ReaderFile {
                     System.out.println(bin);
                     linha = lerArq.readLine(); // lê da segunda até a última linha
                }
-
                arq.close();
           } catch (IOException e) {
                System.err.printf("Erro na abertura do arquivo: %s.\n",
