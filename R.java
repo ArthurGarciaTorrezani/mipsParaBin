@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class R { // add
+public class R { 
      public static String returnbinario(String instrucao, String[] word) {
           // rs rt rd
           Instrucao instrucaotext = new Instrucao();

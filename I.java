@@ -19,13 +19,13 @@ public class I {
           } else if (word.length == 2) {
                traduzida = Tradutor.returnTraducao(word[1], null, null); // mfhi $s1
           } else {
-               traduzida = Tradutor.returnTraducao(word[1], word[2], word[3]); // 
+               traduzida = Tradutor.returnTraducao(word[1], word[2], word[3]); // add $s1, $s2 100
           }
 
           if (!lista.contains(instrucao)) {
-               traduzida[0] = Tradutor.arrumarbinario(traduzida[0], 5);
-               traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 5);
-               traduzida[2] = Tradutor.arrumarbinario(traduzida[2], 16);
+               traduzida[0] = Tradutor.arrumarbinario(traduzida[0], 5); 
+               traduzida[1] = Tradutor.arrumarbinario(traduzida[1], 5); 
+               traduzida[2] = Tradutor.arrumarbinario(traduzida[2], 16); 
                binario += traduzida[1] + traduzida[0] + traduzida[2];
                return binario;
           }

@@ -10,12 +10,12 @@ public class Tradutor {
           } else if (registrador.getMip(r1) != null) { // v
                traducao[0] = registrador.getMip(r1);
           } else {
-               traducao[0] = Integer.toBinaryString(Integer.parseInt(r1));
+               traducao[0] = Integer.toBinaryString(Integer.parseInt(r1)); 
           }
 
           if (r2 == null) {
                traducao[1] = "00000";
-          } else if (registrador.getMip(r2) != null) { // v
+          } else if (registrador.getMip(r2) != null) { // 
                traducao[1] = registrador.getMip(r2);
           } else {
                traducao[1] = Integer.toBinaryString(Integer.parseInt(r2));
